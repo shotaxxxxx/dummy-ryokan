@@ -29,22 +29,22 @@
     content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
   <link rel="icon" href="images/common/favicon.ico">
-  
+
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script src="js/common.js" defer></script>
-  <script src="js/hero.js" defer></script>
+  <script src="js/Slider.js" defer></script>
+  <script src="js/Toggle.js" defer></script>
+  <script src="js/ScrollHeader.js" defer></script>
 </head>
 
-<body>
-
+<body class="body">
   <header class="l-header">
     <div class="l-header-wrapper">
       <h1 class="l-header-title">
@@ -60,7 +60,7 @@
       </h1>
       <nav class="l-header-nav">
         <h2 class="screen-reader-text">サイト内メニュー</h2>
-        <button type="button" class="js-button-hamburger button-hamburger" aria-controls="global-nav"
+        <button type="button" class="js-drawer button-hamburger" aria-expanded="false" aria-controls="global-nav"
           aria-expanded="false">
           <span class="hamburger">
             <span class="screen-reader-text">メニュー開閉する</span>
@@ -86,23 +86,29 @@
 
   <main class="l-main">
     <div class="hero">
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <figure class="swiper-slide">
-            <img class="slide-img" src="images/toppage/mainbg01.png"
-              srcset="images/toppage/mainbg01.png, images/toppage/mainbg01@2x.png 2x"
-              alt="目の前の紅葉と池を眺めながら縁側に座っている帽子を被った老人">
-          </figure>
-          <figure class="swiper-slide">
-            <img class="slide-img" src="images/toppage/mainbg02.png"
-              srcset="images/toppage/mainbg02.png, images/toppage/mainbg02@2x.png 2x"
-              alt="目の前の紅葉と池を眺めながら縁側に座っている帽子を被った老人">
-          </figure>
-          <figure class="swiper-slide">
-            <img class="slide-img" src="images/toppage/mainbg03.png"
-              srcset="images/toppage/mainbg03.png, images/toppage/mainbg03@2x.png 2x"
-              alt="目の前の紅葉と池を眺めながら縁側に座っている帽子を被った老人">
-          </figure>
+      <div class="slider">
+        <div class="slider__wrapper js-heroSlider">
+          <div class="slider__item">
+            <figure class="slider__transition">
+              <img class="slider-img" src="images/toppage/mainbg01.png"
+                srcset="images/toppage/mainbg01.png, images/toppage/mainbg01@2x.png 2x"
+                alt="目の前の紅葉と池を眺めながら縁側に座っている帽子を被った老人">
+            </figure>
+          </div>
+          <div class="slider__item">
+            <figure class="slider__transition">
+              <img class="slider-img" src="images/toppage/mainbg02.png"
+                srcset="images/toppage/mainbg02.png, images/toppage/mainbg02@2x.png 2x"
+                alt="目の前の紅葉と池を眺めながら縁側に座っている帽子を被った老人">
+            </figure>
+          </div>
+          <div class="slider__item">
+            <figure class="slider__transition">
+              <img class="slider-img" src="images/toppage/mainbg03.png"
+                srcset="images/toppage/mainbg03.png, images/toppage/mainbg03@2x.png 2x"
+                alt="目の前の紅葉と池を眺めながら縁側に座っている帽子を被った老人">
+            </figure>
+          </div>
         </div>
         <div class="hero-body">
           <p class="hero-copy">頑張る人の<br>頑張らない時間</p>

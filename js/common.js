@@ -1,32 +1,4 @@
 $(function() {
-  // ドロワーメニュー
-  $('.js-button-hamburger').click(function() {
-    $('body').toggleClass('is-active-drawer');
-    $('body').toggleClass('is-active-fixed');
-
-    if($(this).attr('aria-expanded') == 'false') {
-      $(this).attr('aria-expanded', true);
-    } else {
-      $(this).attr('aria-expanded', false);
-    }
-  });
-
-  // スクロール後ヘッダー固定
-  var headerHeight = $('.l-header').outerHeight();
-
-  $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-
-    if(scroll > headerHeight) {
-      $('.l-header').addClass('is-header-fixed');
-      $('.hamburger').addClass('is-active-hamburger');
-    } else {
-      $('.l-header').removeClass('is-header-fixed');
-      $('.hamburger').removeClass('is-active-hamburger');
-    }
-    
-  });
-
   // モーダル
   var scrollTop;
 
@@ -53,26 +25,26 @@ $(function() {
     bodyFixedOn();
     $('body').append('<div id="modal-bg"></div>');
     $(this).attr('aria-expended', true);
-     
+
      modalResize();
 
      $('.l-modal-wrapper, #modal-bg').fadeIn("slow");
 
      // モーダルを画面中央に出現させる
-     $(window).resize(modalResize);
+    $(window).resize(modalResize);
+
      function modalResize() {
        var width = $(window).width();
        var height = $(window).height();
-       
+
        var cw = $('.l-modal-wrapper').outerWidth();
        var ch = $('.l-modal-wrapper').outerHeight();
-       
+
        $('.l-modal-wrapper').css({
          "left": ((width - cw) / 2) + "px",
          "top": ((height - ch) / 2) + "px"
-       }); 
-     } 
-
+       });
+     }
   });
 
   $('.js-modal-close').click(function() {
@@ -90,8 +62,8 @@ $(function() {
     $('.l-modal-wrapper, #modal-bg').fadeOut('slow', function() {
       // モーダルを閉じた時に元の位置を保持
       bodyFixedOff();
-      
-      $('body').removeClass('is-active-fixed');
+
+      $('body').removeClass('is-fixedActive');
       $('#modal-bg').remove();
     $(this).attr('aria-expended', false);
     });
@@ -104,7 +76,7 @@ $(function() {
 
   $('.js-tab').click(function() {
     $('.js-tabBody > div').hide();
-  
+
     $('.js-tab').removeClass('is-active-tab');
     $(this).addClass('is-active-tab');
     const index = tabs.index(this);
@@ -119,7 +91,5 @@ $(function() {
   flatpickr('#calender', config);
 
   AOS.init()
-  
+
 });
-
-
